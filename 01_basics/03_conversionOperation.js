@@ -55,17 +55,20 @@ let str3 = str1 + str2
 // console.log(3 + 4 * 5 % 6);
 
 // These are bad programming practices, creates confusion
-console.log(+true); // -> 1
-console.log(-true); // -> -1
-console.log(+""); // -> 0
-console.log(-""); // -> -0
-console.log(+"a"); // -> NaN
-console.log(-"a"); // -> NaN
+// console.log(+true); // -> 1
+// console.log(-true); // -> -1
+// console.log(+""); // -> 0
+// console.log(-""); // -> -0
+// console.log(+"a"); // -> NaN
+// console.log(-"a"); // -> NaN
+let num1,num2,num3
+num1 = num2 = num3 = 2 + 2
+// console.table([num1,num2,num3])
 
 let gameCounter = 100
 // gameCounter++
 ++gameCounter
-console.log(gameCounter);
+// console.log(gameCounter);
 
 // link to study
 // https://tc39.es/ecma262/multipage/abstract-operations.html#sec-type-conversion
