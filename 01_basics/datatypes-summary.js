@@ -21,7 +21,7 @@ const anotherId = Symbol('123')
 
 const bigNumber = 1498649648948644874548542n
 // console.log(bigNumber);
-console.log(typeof bigNumber); // -> bigint
+// console.log(typeof bigNumber); // -> bigint
 
 
 // 2) Reference (Non-Primitive):
@@ -39,10 +39,31 @@ let myFunction = function () {
     console.log("Hello World!");
 }
 
-console.log(typeof heros); // -> object
-console.log(typeof myObj); // -> object
-console.log(typeof myFunction); // -> function (object function)
+// console.log(typeof heros); // -> object
+// console.log(typeof myObj); // -> object
+// console.log(typeof myFunction); // -> function (object function)
 
 /*
 Link: https://262.ecma-international.org/5.1/#sec-11.4.3
 */
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++++
+// Stack (Primitive) and Heap (Reference)
+// Examples:
+
+let myAccountName = "tinkumaji"
+let accountNameCopy = myAccountName
+accountNameCopy = "majitinku"
+console.log(myAccountName);
+console.log(accountNameCopy);
+
+let userOne = {
+    email: "userone@gmail.com",
+    upi: "userone@ybl"
+}
+
+let userTwo = userOne
+userTwo.email = "tinku@google.com"
+console.log(userOne.email);
+console.log(userTwo.email);
