@@ -52,10 +52,48 @@ const objArr = [
 ];
 
 // console.log(objArr[1].email); // -> m@gmail.com
-console.log(Object.keys(tinderUser)); // -> [ 'id', 'name', 'isLoggedIn' ]
-console.log(Object.values(tinderUser)); // -> [ '123abc', 'Sammy', false ]
-console.log(Object.entries(tinderUser)); // -> [ [ 'id', '123abc' ], [ 'name', 'Sammy' ], [ 'isLoggedIn', false ] ]
+// console.log(Object.keys(tinderUser)); // -> [ 'id', 'name', 'isLoggedIn' ]
+// console.log(Object.values(tinderUser)); // -> [ '123abc', 'Sammy', false ]
+// console.log(Object.entries(tinderUser)); // -> [ [ 'id', '123abc' ], [ 'name', 'Sammy' ], [ 'isLoggedIn', false ] ]
 
-console.log(tinderUser.hasOwnProperty('isLoggedIn')); // -> true
-console.log(tinderUser.hasOwnProperty('isLogged')); // -> false
+// console.log(tinderUser.hasOwnProperty('isLoggedIn')); // -> true
+// console.log(tinderUser.hasOwnProperty('isLogged')); // -> false
 
+
+// ------------ Object de-structing: --------------
+const course = {
+    cousreName: "javascript",
+    price: "Rs. 999/-",
+    courseInstructor: "hc"
+};
+
+// console.log(course.courseInstructor); // -> hc
+const {courseInstructor: instructor} = course; // to reduce the use of . notation while working on objects // de-structuring
+// console.log(courseInstructor); // -> hc
+// console.log(instructor); // -> hc
+
+
+// // React.js exmaple: (de-structuring) // props in react.js
+// const navbar = ({company}) => {
+
+// };
+// const {company} = "tinku";
+
+
+
+// ---------------- APIs ------------------
+// JSON format examples: (JSON is an Object notation)
+
+// Object format: (like an object, but keys are in string format)
+// {
+//     "name": "hc",
+//     "course": "javascript",
+//     "price": "free"
+// }
+
+// Array format:
+// [
+//     {},
+//     {},
+//     {}
+// ]
