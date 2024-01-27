@@ -60,7 +60,7 @@ if (true) {
 
 // +++++++++++++++++ Interesting +++++++++++++++++++
 
-console.log(addOne(5)); // -> 6
+console.log(addOne(5)); // -> 6 // Normal functions can be accessed before decleration
 function addOne(num) { 
     return num + 1;
 }
