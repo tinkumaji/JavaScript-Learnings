@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setInterval</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <h1>Hello Everyone</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    const printIt = function (str) {
+      console.log(str + " " + Date.now());
+    };
+    const interval = setInterval(printIt, 1000, "Hi");
+    const stopIt = function () {
+      clearInterval(interval);
+      console.log("clicked stop");
+    };
+    document.querySelector("#stop").addEventListener("click", stopIt);
+  </script>
+</html>
