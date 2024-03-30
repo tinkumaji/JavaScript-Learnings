@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body {
+            background-color: #212121;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            height: 500px;
+            width: 500px;
+            border: 2px solid white;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            padding: 8px;
+            width: 70px;
+            color: black;
+            border-radius: 5px;
+            transform: translateY(180px);
+        }
+        img {
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <button>Click!</button>
+    </div>
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+    const xhr = new XMLHttpRequest();
+    const card = document.querySelector('.card');
+    const perform = function () {
+        xhr.open('GET', requestUrl);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                const data = JSON.parse(this.responseText);
+                // console.log(typeof data);
+                // console.log(data.followers);
+                const image = data.avatar_url;
+                console.log(image);
+                const followers = data.followers;
+                console.log(followers);
+                card.innerHTML = `
+                    <img src="${image}" alt="">
+                    </br>
+                    <h2>Followers: <span>${followers}</span></h2>
+                `;
+            }
+        }
+        xhr.send();
+    }
+    
+    document.querySelector('button').addEventListener('click', (e) => {
+        perform();
+    });
+</script>
+</html>
